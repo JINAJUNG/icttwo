@@ -38,7 +38,7 @@
 		<table class="table table-hover">
 			<tr style="text-align: center;">
 				<th>과자이름</th>
-				<th>가격</th>
+				<th>과자가격</th>
 				<th>생산지</th>
 			</tr>
 			<%

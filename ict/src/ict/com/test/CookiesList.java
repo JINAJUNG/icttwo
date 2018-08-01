@@ -9,7 +9,7 @@ public class CookiesList {
 	private static CookiesList cl;
 	private List<HashMap<String,String>> cookiesL;
 	public static CookiesList getCookies() {
-		if(cl==null) { //½Ì±ÛÅæÆĞÅÏ
+		if(cl==null) { //ì‹±ê¸€í†¤íŒ¨í„´
 			cl=new CookiesList();
 		}
 		return cl;
@@ -22,8 +22,8 @@ public class CookiesList {
 			for(int i=0;i<20;i++) {
 				HashMap<String,String> hm = new HashMap<String,String>();
 				hm.put("cName", "cheeseCracker"+(i+1));
-				hm.put("cPay", (int)(Math.random()*2000)+1000+"¿ø");
-				hm.put("cFactory", "±¸¹Ì ÇØÆò"+(i+1)+"¹øÁö");
+				hm.put("cPay", (int)(Math.random()*2000)+1000+"ì›");
+				hm.put("cFactory", "êµ¬ë¯¸ í•´í‰"+(i+1)+"ë²ˆì§€");
 				cookiesL.add(hm);
 			}
 		}
