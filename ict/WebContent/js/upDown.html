@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form onsubmit="return chN(this)">
+		생각 하는 숫자 : <input type="text" id="thinkNum">
+		<button>검색</button>
+	</form>
+	<div id="rDiv"></div>
+	<script type="text/javascript">
+		var ranNum = Math.floor(Math.random() * 100) + 1;//Math.floor() 를 사용하여 정수화시켜야 합니다.
+		function chN(obj) {
+			var thNum = parseInt(document.querySelector('#thinkNum').value);
+			var rDiv = parseInt(document.querySelector('#rDiv').value);
+			var min = 0;
+			var max = 0;
+			var str ='내가 입력 했던 숫자 : ';
+			var inputNum = [];
+			
+			if (ranNum === thNum) {
+				alert(thNum + "정답입니다~~");
+				return true;
+			} else {
+				if (ranNum > thNum) {
+					min=thNum;
+					alert(min + "보다 큽니다.");
+				} else {
+					max=thNum;
+					alert(max + "보다 작습니다.");
+				}
+			}
+			
+			for(var i=0;i<inputNum.length;i++){
+				str+= thNum+', ';
+			}
+			rDiv.innerHTML= str;
+			return false;
+		}
+	</script>
+</body>
+</html>

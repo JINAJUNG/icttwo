@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+초입력 : <input type="text" id="al">
+<button type="button" onclick="alarm()">알람설정</button>
+
+	<div id="rDiv"></div>
+	<!-- 날짜,시간은 서버와 디비 시간 중에 데이터베이스 시간으로 통일 -->
+	<script type="text/javascript">
+		function showDate() {
+			var toDate = new Date();
+			var yyyy = toDate.getFull6Year();
+			var mm = toDate.getMonth()+1;
+			var dd = toDate.getDate();
+			//var dd = toDate.getDay();
+			//var dtext = {'일','월','화','수','목','금','토'};
+			var hh = toDate.getHours();
+			var mi = toDate.getMinutes();
+			var ss = toDate.getSeconds();
+			
+			var clockStr = yyyy + "/" + mm + "/" + dd+" "+hh+":"+mi+":"+ss;
+			document.querySelector("#rDiv").innerHTML = clockStr;
+		}
+		showDate();
+		
+		function alarm(){
+			var alObj = document.querySelector('#al');
+			var alV = parseInt(alObj.value*1000);		
+			setTimeout(function() {
+				  alert('good')}, alV);
+			
+		}
+	</script>
+</body>
+</html>
