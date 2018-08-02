@@ -12,14 +12,14 @@
 	<div id="rDiv"></div>
 	<script type="text/javascript">
 		var ranNum = Math.floor(Math.random() * 100) + 1;//Math.floor() 를 사용하여 정수화시켜야 합니다.
+		var str ='내가 입력 했던 숫자 : ';
+		var rDiv = document.querySelector('#rDiv');
+		var count=0;
 		function chN(obj) {
 			var thNum = parseInt(document.querySelector('#thinkNum').value);
-			var rDiv = parseInt(document.querySelector('#rDiv').value);
 			var min = 0;
 			var max = 0;
-			var str ='내가 입력 했던 숫자 : ';
-			var inputNum = [];
-			
+
 			if (ranNum === thNum) {
 				alert(thNum + "정답입니다~~");
 				return true;
@@ -32,11 +32,18 @@
 					alert(max + "보다 작습니다.");
 				}
 			}
-			
-			for(var i=0;i<inputNum.length;i++){
-				str+= thNum+', ';
+			count++;
+			if(count===10){
+				alert("실패 게임종료<br>새 게임 다시 시작");
+				return true;
 			}
+			
+			str += thNum;
+			/* str = str.substring(0,(str.length-2)); */
 			rDiv.innerHTML= str;
+			str += ", ";
+			document.querySelector('#thinkNum').value='';
+			document.querySelector('#thinkNum').focus();
 			return false;
 		}
 	</script>
