@@ -4,7 +4,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	CookiesList cl = new CookiesList(); //싱글톤패턴이 아니라 새로굄할때마다 새 인스턴스를 사용
+	/* CookiesList cl = new CookiesList(); //싱글톤패턴이 아니라 새로굄할때마다 새 인스턴스를 사용 */
+	CookiesList cl = CookiesList.getCookies();
 	String[] chStr = request.getParameterValues("chStr"); 
 	String searchStr = request.getParameter("searchStr");
 	List<HashMap<String, String>> cList = cl.getCookiesList(searchStr,chStr);

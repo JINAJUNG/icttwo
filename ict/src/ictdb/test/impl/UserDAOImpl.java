@@ -20,7 +20,6 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public ArrayList<HashMap<String, String>> selectUserList(HashMap<String, String> user) {
 		this.con = DBCon.getCon();
-		System.out.println(this.con);
 		ArrayList<HashMap<String, String>> userList = new ArrayList<HashMap<String, String>>();
 		String sql = "select * from member";
 		if (user != null) {
@@ -60,7 +59,7 @@ public class UserDAOImpl implements UserDAO {
 		con = DBCon.getCon();
 		
 		String sql = "insert into member(memNum,memName, memId, memPwd, memAge, memEtc,credat,cretim,moddat,modtim) ";
-		sql += "values (member_seq.nextval,?,?,?,?,?,to_char(sysdate,'YYYYmmdd'),to_char(sysdate,'HH24miss'),to_char(sysdate,'YYYYmmdd'),to_char(sysdate,'HH24miss'))";
+		sql += "values (mem_seq.nextval,?,?,?,?,?,to_char(sysdate,'YYYYmmdd'),to_char(sysdate,'HH24miss'),to_char(sysdate,'YYYYmmdd'),to_char(sysdate,'HH24miss'))";
 		int result = 0;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
